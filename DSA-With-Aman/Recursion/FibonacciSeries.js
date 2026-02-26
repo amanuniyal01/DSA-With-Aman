@@ -10,3 +10,11 @@ const FibonacciSeries = (num) => {
     return arr
 }
 console.log(FibonacciSeries(5))
+
+// RECURSION
+const RecursiveApproach = (num) => {
+    if (num <= 1) return num;
+    return RecursiveApproach(num - 1) + RecursiveApproach(num - 2)
+
+}
+console.log(RecursiveApproach(5))
