@@ -17,4 +17,4 @@ const RecursiveApproach = (num) => {
     return RecursiveApproach(num - 1) + RecursiveApproach(num - 2)
 
 }
-console.log(RecursiveApproach(5))
+console.log(RecursiveApproach(10))
