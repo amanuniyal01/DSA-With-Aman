@@ -10,23 +10,44 @@
 
 
 // Approach -2 (Using Two Loops )
-let LengthofLastWord = (str) => {
+// let LengthofLastWord = (str) => {
+//     let n = str.length - 1;
+
+//     // Step 1: skip trailing spaces
+//     while (n >= 0 && str[n] === " ") {
+//         n--;
+//     }
+
+//     // Step 2: count last word
+//     let count = 0;
+//     while (n >= 0 && str[n] !== " ") {
+//         count++;
+//         n--;
+//     }
+
+//     return count;
+// }
+
+// console.log(LengthofLastWord("    aman uniyal")); // 6
+
+// Using One Loop(3rd Approach)
+
+const LengthofLastWord = (str) => {
     let n = str.length - 1;
-
-    // Step 1: skip trailing spaces
-    while (n >= 0 && str[n] === " ") {
-        n--;
-    }
-
-    // Step 2: count last word
     let count = 0;
-    while (n >= 0 && str[n] !== " ") {
-        count++;
-        n--;
+    while (n >= 0) {
+        if (str[n] !== " ") {
+            count++;
+        }
+        else if (count > 0) {
+            break;
+        }
+
+        --n;
     }
+    return count
 
-    return count;
+
 }
-
-console.log(LengthofLastWord("    aman uniyal")); // 6
+console.log(LengthofLastWord("  aman uniyal  "))
 
