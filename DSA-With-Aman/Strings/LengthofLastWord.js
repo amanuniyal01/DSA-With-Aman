@@ -9,18 +9,24 @@
 // console.log(LengthofLastWord("aman Uniyal zoo    "))
 
 
-// Approach -2 (Using Loops)
-const LengthofLastWord = (str) => {
-    let word = str.trim();
-    let count = 0;
+// Approach -2 (Using Two Loops )
+let LengthofLastWord = (str) => {
+    let n = str.length - 1;
 
-    for (let i = word.length - 1; i >= 0; i--) {
-        if (word[i] === " ") {
-            break;
-        }
+    // Step 1: skip trailing spaces
+    while (n >= 0 && str[n] === " ") {
+        n--;
+    }
+
+    // Step 2: count last word
+    let count = 0;
+    while (n >= 0 && str[n] !== " ") {
         count++;
+        n--;
     }
 
     return count;
 }
-console.log(LengthofLastWord("      aman uniyal is a good boy"))
+
+console.log(LengthofLastWord("    aman uniyal")); // 6
+
