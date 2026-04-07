@@ -30,3 +30,20 @@ const JewelsandStones = (jewels, stones) => {
 
 }
 console.log(JewelsandStones("aA", "aAAbbbb"))
+
+
+// Optimized approach(Using Set)
+var numJewelsInStones = function (jewels, stones) {
+    let count = 0;
+    let set = new Set(jewels);
+
+    for (let i = 0; i < stones.length; i++) {
+        if (set.has(stones[i])) {
+            count++;
+        }
+    }
+
+    return count;
+};
+
+console.log(numJewelsInStones("aA", "aAAbbbb"));
