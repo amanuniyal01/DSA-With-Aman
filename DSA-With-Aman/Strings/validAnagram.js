@@ -31,3 +31,5 @@ const validAnagram2 = (s1, s2) => {
 
 }
 console.log(validAnagram2("aman","nama"))
+
+// Optimized Approach
