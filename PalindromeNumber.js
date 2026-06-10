@@ -12,5 +12,5 @@ var isPalindrome = function (x) {
 
     return original === rev;
 };
-console.log(isPalindrome(1212132))
 console.log(isPalindrome(1222221))
+console.log(isPalindrome(1212132))
