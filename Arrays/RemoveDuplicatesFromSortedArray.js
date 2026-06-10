@@ -17,4 +17,5 @@ const RemoveDuplicates = (arr) => {
 }
 
 console.log(RemoveDuplicates([1, 2, 2, 3, 3, 4, 4, 5]))
+console.log(RemoveDuplicates([1, 2, 2, 3, 3, 4, 5, 5]))
 // console.log(RemoveDuplicates([5,4,4,3,3,2,2,1])) 
