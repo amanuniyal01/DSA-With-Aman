@@ -10,5 +10,5 @@ const ReverseInteger = (num) => {
     return (numCopy < 0) ? (-rev) : (rev)
 
 }
-console.log(ReverseInteger(12345))
 console.log(ReverseInteger(-12345))
+console.log(ReverseInteger(12345))
