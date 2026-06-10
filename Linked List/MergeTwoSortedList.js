@@ -53,7 +53,7 @@ function printList(head) {
     console.log(result.join(" -> "));
 }
 
-// ✅ Test Case
+
 let l1 = createList([1, 3, 5]);
 let l2 = createList([2, 4, 6]);
 
