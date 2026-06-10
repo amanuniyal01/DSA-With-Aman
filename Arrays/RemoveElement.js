@@ -15,3 +15,4 @@ const RemoveElement = (nums, val) => {
 
 }
 console.log(RemoveElement([1, 2, 2, 3, 4, 5], 2))
+console.log(RemoveElement([1, 2, 3, 4, 4, 4, 4, 5], 4))
