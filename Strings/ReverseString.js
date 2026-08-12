@@ -31,3 +31,9 @@ const reverseWords = (str) => {
     return str.split(" ").reverse().join(" ");
 };
 console.log(reverseWords("I love Js")) //Js love I
+
+// LIMIT
+// By using a extra argument in split basically 2nd we can define a limit upto which we want to split it.
+const stringg = "a,b,c,d,e,f"
+const limitStr = stringg.split(",", 3)
+console.log(limitStr, "Hey I m limit")
