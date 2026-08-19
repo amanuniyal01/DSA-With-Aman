@@ -24,5 +24,32 @@ const validPalindrome1 = (str) => {
     return reverseString == filteredString
 
 }
-const res = validPalindrome1("A man, a plan, a canal: Panama");
+// const res = validPalindrome1("A man, a plan, a canal: Panama");
+// console.log(res)
+
+
+// 2 POINTER APPROACH
+const validPalindrome2 = (str) => {
+    let n = str.length
+    let i = 0;
+    let j = n - 1
+    str = str.toLowerCase();
+    while (i < j) {
+        if (!str[i].match(/[a-z0-9]/)) {
+            i++;
+        }
+        else if (!str[j].match(/[a-z0-9]/)) {
+            j--;
+        }
+        else if (str[i] == str[j]) {
+            i++;
+            j--;
+        }
+        else {
+            return false
+        }
+    }
+    return true
+}
+const res = validPalindrome2("A man, a plan, a canal: Panama");
 console.log(res)
