@@ -9,6 +9,7 @@ console.log(validAnagram("Aman", "Amman"))
 // 
 
 const validAnagram2 = (s1, s2) => {
+    if (s1.length !== s2.length) return false;
     let map = {};
     for (let i = 0; i < s1.length; i++) {
         if (!map[s1[i]]) {
@@ -20,7 +21,7 @@ const validAnagram2 = (s1, s2) => {
         }
     }
     for (let i = 0; i < s2.length; i++) {
-        if (!map[s2[i]] || map[s2[i]] < 0) {
+        if (!map[s2[i]]) {
             return false
         }
         else {
@@ -30,6 +31,6 @@ const validAnagram2 = (s1, s2) => {
     return true;
 
 }
-console.log(validAnagram2("aman","nama"))
+console.log(validAnagram2("amsaasana", "nama"))
 
 // Optimized Approach

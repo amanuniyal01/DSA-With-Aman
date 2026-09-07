@@ -12,33 +12,54 @@
  * - Traverse both strings and ensure consistency in mapping
  */
 
-var isIsomorphic = function (s, t) {
+// var isIsomorphic = function (s, t) {
 
-    if (s.length !== t.length) {
-        return false;
-    }
+//     if (s.length !== t.length) {
+//         return false;
+//     }
 
-    let mapofStoT = {};
-    let mapofTtoS = {};
+//     let mapofStoT = {};
+//     let mapofTtoS = {};
 
+//     for (let i = 0; i < s.length; i++) {
+
+//         if (!mapofStoT[s[i]] && !mapofTtoS[t[i]]) {
+//             mapofStoT[s[i]] = t[i];
+//             mapofTtoS[t[i]] = s[i];
+//         }
+
+//         else if (mapofTtoS[t[i]] !== s[i]) {
+//             return false;
+//         }
+
+//         else if (mapofStoT[s[i]] !== t[i]) {
+//             return false;
+//         }
+
+//     }
+//     return true;
+// };
+const isIsomorphic = (s, t) => {
+
+    let mapStoT = {}
+    let mapTtoS = {}
     for (let i = 0; i < s.length; i++) {
-
-        if (!mapofStoT[s[i]] && mapofTtoS[t[i]]) {
-            mapofStoT[s[i]] = t[i];
-            mapofTtoS[t[i]] = s[i];
+        if (!mapStoT[s[i]] && !mapTtoS[t[i]]) {
+            mapStoT[s[i]] = t[i]
+            mapStoT[t[i]] = s[i]
         }
 
         else if (mapofTtoS[t[i]] !== s[i]) {
             return false;
         }
-
         else if (mapofStoT[s[i]] !== t[i]) {
             return false;
         }
 
+        return true;
+
     }
-    return true;
-};
+}
 
 
 
