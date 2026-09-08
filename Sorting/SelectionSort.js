@@ -15,10 +15,12 @@ const SelectionSort = (arr) => {
                 min = j;
             }
 
+        //Swap the ith and min element.
         [arr[i], arr[min]] = [arr[min], arr[i]];
     }
 
     return arr;
+    //Time COMPLEXITY = O(n2)
 }
 let result = SelectionSort([2, 4, 3, 5, 1]);
 console.log("Result :", result);
