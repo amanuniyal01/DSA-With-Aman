@@ -20,6 +20,22 @@ function hasCycle(head) {
     return false;
 }
 
+
+//Floyd cycle Finding Algorithm.
+let fast = head;
+let slow = head.next;
+
+while (slow !== fast) {
+    if (fast == null || fast.next == null) {
+        return false
+    }
+    slow = slow.next;
+    fast = fast.next.next;
+}
+return true;
+
+
+
 // ----------- TESTING CODE -----------
 
 // Creating linked list: 1 -> 2 -> 3 -> 4 -> 5

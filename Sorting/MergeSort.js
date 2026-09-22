@@ -31,4 +31,4 @@ const merge = (left, right) => {
     return [...result, ...left.slice(i), ...right.slice(j)]
 }
 
-console.log(MergeSort([5,3,8,4,2]))
+console.log(MergeSort([5, 3, 8, 4, 2]))
