@@ -126,3 +126,31 @@ let n = 2;
 
 let updatedHead = removeNthFromEnd(head, n);
 printList(updatedHead);  // Output: 1 -> 2 -> 3 -> 5
+
+
+const RemoveNthNodeUsingTwoPass = () => {
+    let n = 5;
+
+    //variable to count length;
+    let length = 0;
+    let curr = head;
+
+    //Getting the length of list
+    while (curr !== null) {
+        length++;
+        curr = curr.next
+    }
+
+    //Reset it to head bcz after getting length curr is at null now.
+    curr = head;
+    for (let i = 0; i < length - n - 1; i++) {
+        curr = curr.next
+    }
+
+
+    // Remove nth node from end
+    curr.next = curr.next.next;
+
+    return head;
+
+}
