@@ -35,8 +35,6 @@ var addTwoNumbers = function (l1, l2) {
     return ansHead.next;
 };
 
-
-
 function createList(arr) {
     let dummy = new ListNode(0);
     let current = dummy;
