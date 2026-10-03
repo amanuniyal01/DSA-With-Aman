@@ -2,44 +2,47 @@
 //  5 -> 1 -> 2 -> 3 -> 4 -> null  1st rotation
 //  4 -> 5 -> 1 -> 2 -> 3 -> null  2nd Rotation
 
-const rotateListByKTerms = (list) => {
+const rotateListByKTerms = (head, k) => {
 
-    if (head == null || head.next == null) {
+    // Empty list or only one node
+    if (head === null || head.next === null) {
         return head;
     }
 
-
     let length = 0;
-
     let curr = head;
     let tail = null;
 
-    //Get the length of linked list.
+    // Find length and tail
     while (curr !== null) {
-        tail = curr
-        curr = curr.next
-        length++
+        tail = curr;
+        curr = curr.next;
+        length++;
     }
 
+    // Avoid unnecessary rotations
+    k = k % length;
 
-    // If there is nothing to rotate just return normal list.
-    if (k == 0) return head
+    // If k is 0, no rotation is needed
+    if (k === 0) {
+        return head;
+    }
 
-    //Doing this to save iterations like if k=20 something so by doing this we will get a small number.
-    k = k % length
-
-    //Reset current to head;
+    // Move to the node just before the new head
     curr = head;
 
-    //Run the loop from 0 to length - k times i.e. Reach the previous node that we want to add at head.
     for (let i = 0; i < length - k - 1; i++) {
-        curr = curr.next
+        curr = curr.next;
     }
 
-    let newHead = curr.next
+    // The next node becomes the new head
+    let newHead = curr.next;
+
+    // Break the list
     curr.next = null;
-    tail.next = head
+
+    // Connect old tail to old head
+    tail.next = head;
 
     return newHead;
-
-}
+};
