@@ -25,8 +25,6 @@ const TwoSum = (arr, target) => {
         if (map[pairToFound] && map[pairToFound] != i) {
             return [i, map[pairToFound]]
         }
-
     }
-
 }
-console.log(TwoSum([2,6,3,1,6,8],10))
+console.log(TwoSum([2, 6, 3, 1, 6, 8], 10))
