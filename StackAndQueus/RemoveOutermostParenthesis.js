@@ -1,5 +1,5 @@
 
-const RemoveOutermostParenthesis = (string) => {
+const RemoveOutermostParenthesisUsingStack = (string) => {
 
     //Always First Character will be a opening Outermost parenthesis. So initializing with first character.
     let stack = [string[0]];
@@ -32,6 +32,27 @@ const RemoveOutermostParenthesis = (string) => {
     return ans;
 };
 
-let result = RemoveOutermostParenthesis("(()())(())");
+
+// WITHOUT USING STACK.
+const RemoveOutermostParenthesWithoutStack = (string) => {
+    let level = 0;
+    let ans = "";
+
+    for (let i = 0; i < s.length; i++) {
+        if (s[i] === "(") {
+            ++level;
+            if (level > 1) {
+                ans = ans + s[i];
+            }
+        } else {
+            if (level > 1) {
+                ans = ans + s[i];
+            }
+            --level;
+        }
+    }
+}
+
+let result = RemoveOutermostParenthesisUsingStack("(()())(())");
 console.log(result);
 
