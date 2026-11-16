@@ -44,5 +44,44 @@ const nextGreaterElement = (nums1, nums2) => {
     }
     return result;
 }
+// console.log("Next Greater Element : ", nextGreaterElement([4, 1, 2], [1, 3, 4, 2]))
 
-console.log("Next Greater Element : ", nextGreaterElement([4, 1, 2], [1, 3, 4, 2]))
+
+const nextGreaterElementOptimized = (nums1, nums2) => {
+
+    // Store each number and its next greater element.
+    let map = {};
+
+    // Stack to store potential next greater elements.
+    let stack = [];
+
+    // Traverse nums2 from right to left.
+    for (let i = nums2.length - 1; i >= 0; i--) {
+
+        let current = nums2[i];
+
+        // Remove all smaller or equal elements.
+        while (stack.length && stack[stack.length - 1] <= current) {
+            stack.pop();
+        }
+
+        // If stack is empty, no greater element exists.
+        if (stack.length === 0) {
+            map[current] = -1;
+        }
+        else {
+            map[current] = stack[stack.length - 1];
+        }
+
+        // Push current element into stack.
+        stack.push(current);
+    }
+
+    // Retrieve answers for nums1.
+    return nums1.map(x => map[x]);
+};
+
+console.log(
+    nextGreaterElementOptimized([4, 1, 2], [1, 3, 4, 2])
+);
+
