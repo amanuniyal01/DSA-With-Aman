@@ -32,4 +32,36 @@ const dailyTemperatures = (temperatures) => {
     return answer;
 };
 
+const dailyTemperaturesOptimized = (temperatures) => {
+
+    let stack = [];
+
+    let n = temperatures.length;
+
+    let answer = Array(n).fill(0);
+
+    stack.push(n - 1);
+
+    for (let i = n - 2; i >= 0; i--) {
+
+        // Remove elements that are not warmer.
+        while (
+            stack.length > 0 &&
+            temperatures[i] >= temperatures[stack[stack.length - 1]]
+        ) {
+            stack.pop();
+        }
+
+        // If a warmer day exists.
+        if (stack.length > 0) {
+            answer[i] = stack[stack.length - 1] - i;
+        }
+
+        // Push current index.
+        stack.push(i);
+    }
+
+    return answer;
+};
 console.log(dailyTemperatures([30, 40, 50, 60]));
+console.log(dailyTemperaturesOptimized([30, 40, 50, 60]));
